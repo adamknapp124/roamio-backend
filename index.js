@@ -68,6 +68,11 @@ app.get('/get-public-ids', async (req, res) => {
 	});
 });
 
+app.post('/delete-image', async (req, res) => {
+	const data = req.body;
+	console.log(data);
+});
+
 app.listen(PORT, () => {
 	console.log(`App listening on port ${PORT}`);
 });
