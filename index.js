@@ -21,7 +21,7 @@ app.use(cors());
 app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 
-app.post('roamio-backend.vercel.app/', async (req, res) => {
+app.post('https://roamio-backend.vercel.app/', async (req, res) => {
 	// destructure the properties from the req object
 	const { image } = req.body;
 	try {
@@ -47,7 +47,7 @@ app.post('roamio-backend.vercel.app/', async (req, res) => {
 	}
 });
 
-app.post('roamio-backend.vercel.app/add-photo', async (req, res) => {
+app.post('https://roamio-backend.vercel.app/add-photo', async (req, res) => {
 	const data = req.body;
 	const public_id = data.public_id;
 	try {
@@ -59,7 +59,7 @@ app.post('roamio-backend.vercel.app/add-photo', async (req, res) => {
 	}
 });
 
-app.get('roamio-backend.vercel.app/get-public-ids', async (req, res) => {
+app.get('https://roamio-backend.vercel.app/get-public-ids', async (req, res) => {
 	const query = 'SELECT * FROM photos';
 	connection.query(query, function (err, result, fields) {
 		if (err) throw err;
@@ -68,7 +68,7 @@ app.get('roamio-backend.vercel.app/get-public-ids', async (req, res) => {
 	});
 });
 
-app.post('roamio-backend.vercel.app/delete-image', async (req, res) => {
+app.post('https://roamio-backend.vercel.app/delete-image', async (req, res) => {
 	const data = req.body;
 	const public_id = data.image;
 
