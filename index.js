@@ -7,7 +7,7 @@ const cors = require('cors');
 
 // Configure CORS options
 const corsOptions = {
-	origin: 'https://roamio-backend.vercel.app', // Specify the exact origin of your Vercel deployment
+	origin: 'https://roamio-rho.vercel.app', // Specify the exact origin of your Vercel deployment
 	methods: ['GET', 'POST', 'PUT', 'DELETE'], // Include the methods your API supports
 	allowedHeaders: ['Content-Type', 'Authorization'], // Include any additional headers your API expects
 	credentials: true, // If your React app sends credentials (e.g., cookies), set this to true
