@@ -2,7 +2,16 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
+
 const cors = require('cors');
+
+// Configure CORS options
+const corsOptions = {
+	origin: 'https://roamio-backend.vercel.app', // Specify the exact origin of your Vercel deployment
+	methods: ['GET', 'POST', 'PUT', 'DELETE'], // Include the methods your API supports
+	allowedHeaders: ['Content-Type', 'Authorization'], // Include any additional headers your API expects
+	credentials: true, // If your React app sends credentials (e.g., cookies), set this to true
+};
 
 const PORT = process.env.PORT;
 
@@ -17,7 +26,7 @@ const connection = mysql.createConnection({
 	password: 'Talon511!',
 });
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 
